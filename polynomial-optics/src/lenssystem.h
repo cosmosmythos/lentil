@@ -168,7 +168,7 @@ inline int lens_configuration(std::vector<lens_element_t> &l, const char *id, co
       if (json_lens_element["aspherical-equation"].is_array()){
         lens->aspheric = 1;
         lens->geometry = "aspherical";
-        for(int i = 0; i < 4; i++, i++){
+        for(int i = 0; i < 4; i++){
           lens->aspheric_correction_coefficients(i) = json_lens_element["aspherical-equation"][i].get<float>();
         }
       } else {
